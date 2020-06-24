@@ -81,7 +81,7 @@ public class CustomCardLayout: UICollectionViewLayout {
             var c = cellSize
             c.height = cardHeight
             cellSize = c
-            collectionView?.performBatchUpdates({ 
+            collectionView?.performBatchUpdates({
                 self.invalidateLayout()
             }, completion: nil)
         }
@@ -126,20 +126,14 @@ public class CustomCardLayout: UICollectionViewLayout {
         let update = collection.calculate.isNeedUpdate()
     
         if let select = selectPath, !update {
-            
-            var bottomIdx:CGFloat = 0
             self.attributeList.forEach({
-                if $0.indexPath == select {
-                    setSelect(attribute: $0)
-                } else {
-                    setBottom(attribute: $0, bottomIdx: &bottomIdx)
-                }
+                setSelect(attribute: $0, choose: select)
             })
         } else {
             _selectPath = nil
             if !update , collection.calculate.totalCount == attributeList.count {
-                attributeList.forEach({ [unowned self] in
-                    self.setNoSelect(attribute: $0)
+                attributeList.forEach({
+                    setNoSelect(attribute: $0)
                 })
                 return
             }
@@ -205,7 +199,7 @@ public class CustomCardLayout: UICollectionViewLayout {
 
     }
     
-    fileprivate func setSelect(attribute:CardLayoutAttributes) {
+    fileprivate func setSelect(attribute:CardLayoutAttributes, choose selectedIP: IndexPath) {
         guard let collection = collectionView else {
             return
         }
@@ -214,19 +208,7 @@ public class CustomCardLayout: UICollectionViewLayout {
         attribute.frame = CGRect(x: collection.frame.origin.x, y: collection.contentOffset.y + 0.01 , width: cellSize.width, height: cellSize.height)
     }
     
-    fileprivate func setBottom(attribute:CardLayoutAttributes, bottomIdx:inout CGFloat) {
-        guard let collection = collectionView else {
-            return
-        }
-        let baseHeight = collection.contentOffset.y + collection.bounds.height * 0.9
-        let bottomH = cellSize.height * 0.1
-        let margin:CGFloat = bottomH/CGFloat(bottomShowCount-1)
-        attribute.isExpand = false
-        let yPos = isFullScreen ? (collection.contentOffset.y + collection.bounds.height) : ( bottomIdx * margin + baseHeight )
-        attribute.frame = CGRect(x: 0, y: yPos, width: cellSize.width, height: cellSize.height)
-        bottomIdx += 1
-    }
-    
+
     override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
         guard let first = attributeList.first(where: { $0.indexPath == indexPath }) else {
