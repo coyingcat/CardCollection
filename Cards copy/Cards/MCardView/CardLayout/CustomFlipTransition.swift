@@ -8,13 +8,17 @@
 
 import UIKit
 
-enum TransitionMode: Int {
+enum TransitionMode{
     case present, dismiss
 }
 
-public class CustomFlipTransition: NSObject,UIViewControllerAnimatedTransitioning {
+public
+class CustomFlipTransition: NSObject,UIViewControllerAnimatedTransitioning {
+    
+    
     var duration = 0.3
-    var transitionMode:TransitionMode = .present
+    var transitionMode = TransitionMode.present
+    
     var cardView:UICollectionViewCell!
     var originalCardFrame = CGRect.zero
     

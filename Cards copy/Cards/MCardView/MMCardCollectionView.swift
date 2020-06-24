@@ -42,7 +42,7 @@ public class MMCollectionView: UICollectionView {
     override public var bounds: CGRect {
         didSet {
             if oldValue != bounds && bounds.size != .zero {
-                switch self.collectionViewLayout {
+                switch collectionViewLayout {
                 case let l as CustomCardLayout:
                     l.updateCellSize()
                 default:
@@ -95,7 +95,7 @@ extension MMCollectionView: UIViewControllerTransitioningDelegate {
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
-        if let custom = self.collectionViewLayout as? CustomCardLayout , let path = custom.selectPath {
+        if let custom = collectionViewLayout as? CustomCardLayout, let path = custom.selectPath {
 
             transition.cardView = self.cellForItem(at: path)
             custom.isFullScreen = true
@@ -105,7 +105,7 @@ extension MMCollectionView: UIViewControllerTransitioningDelegate {
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
-        if let custom = self.collectionViewLayout as? CustomCardLayout {
+        if let custom = collectionViewLayout as? CustomCardLayout {
             custom.isFullScreen = false
         }
         return transition
