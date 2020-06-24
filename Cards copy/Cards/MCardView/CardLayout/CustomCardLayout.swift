@@ -31,16 +31,23 @@ public class CustomCardLayout: UICollectionViewLayout {
     
     
 
-    fileprivate var _selectPath: IndexPath?
+    fileprivate var _selectPath: IndexPath? {
+        didSet {
+            self.collectionView!.isScrollEnabled = (_selectPath == nil)
+        }
+    }
     
     
     
     public var selectPath: IndexPath? {
         set {
-            _selectPath = (_selectPath == newValue) ? nil : newValue
             self.collectionView?.performBatchUpdates({
                 self.invalidateLayout()
             }, completion: nil)
+            if let s = newValue{
+                self.collectionView?.scrollToItem(at: s, at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
+            }
+            _selectPath = (_selectPath == newValue) ? nil : newValue
         } get {
             return _selectPath
         }
@@ -236,15 +243,14 @@ public class CustomCardLayout: UICollectionViewLayout {
         var currentFrame = CGRect(x: collection.frame.origin.x, y: y, width: cellSize.width, height: cellSize.height)
 
         originY = y
-        if index <= shitIdx, index >= shitIdx{
+        attribute.frame = currentFrame
+        if index == shitIdx{
+            originY = collection.contentOffset.y
             attribute.frame = CGRect(x: currentFrame.origin.x, y: collection.contentOffset.y, width: cellSize.width, height: cellSize.height)
         }
         else if index <= shitIdx, currentFrame.maxY > collection.contentOffset.y{
-            currentFrame.origin.y -= (currentFrame.maxY - collection.contentOffset.y )
+            currentFrame.origin.y -= (currentFrame.maxY - collection.contentOffset.y)
             originY = currentFrame.origin.y
-            attribute.frame = currentFrame
-        }
-        else{
             attribute.frame = currentFrame
         }
     }
