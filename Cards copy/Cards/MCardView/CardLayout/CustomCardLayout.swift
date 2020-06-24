@@ -31,11 +31,7 @@ public class CustomCardLayout: UICollectionViewLayout {
     
     
 
-    fileprivate var _selectPath: IndexPath? {
-        didSet {
-            self.collectionView!.isScrollEnabled = (_selectPath == nil)
-        }
-    }
+    fileprivate var _selectPath: IndexPath?
     
     
     
@@ -126,8 +122,18 @@ public class CustomCardLayout: UICollectionViewLayout {
         let update = collection.calculate.isNeedUpdate()
     
         if let select = selectPath, !update {
+            var y: CGFloat = 0
+            
+            let currentSectionCount = collection.numberOfItems(inSection: select.section)
+            var selectNext = select
+            if select.item < (currentSectionCount - 1){
+                selectNext = IndexPath(item: select.item + 1, section: select.section)
+            }
+            else if select.section < (collection.numberOfSections - 1){
+                selectNext = IndexPath(item: 0, section: select.section + 1)
+            }
             self.attributeList.forEach({
-                setSelect(attribute: $0, choose: select)
+                setSelect(attribute: $0, choose: select, chooseNext: selectNext, y: &y)
             })
         } else {
             _selectPath = nil
@@ -188,24 +194,59 @@ public class CustomCardLayout: UICollectionViewLayout {
         var currentFrame = CGRect(x: collection.frame.origin.x, y: titleHeight * CGFloat(index), width: cellSize.width, height: cellSize.height)
  
                 
-        if index <= shitIdx , index >= shitIdx{
+        if index <= shitIdx, index >= shitIdx{
             attribute.frame = CGRect(x: currentFrame.origin.x, y: collection.contentOffset.y, width: cellSize.width, height: cellSize.height)
-        } else if index <= shitIdx, currentFrame.maxY > collection.contentOffset.y{
+        }
+        else if index <= shitIdx, currentFrame.maxY > collection.contentOffset.y{
             currentFrame.origin.y -= (currentFrame.maxY - collection.contentOffset.y )
             attribute.frame = currentFrame
-        }else {
+        }
+        else {
             attribute.frame = currentFrame
         }
-
     }
     
-    fileprivate func setSelect(attribute:CardLayoutAttributes, choose selectedIP: IndexPath) {
+    fileprivate func setSelect(attribute:CardLayoutAttributes, choose selectedIP: IndexPath, chooseNext next: IndexPath,  y originY: inout CGFloat) {
         guard let collection = collectionView else {
             return
         }
-        attribute.isExpand = true
-        // 0.01 prevent no reload
-        attribute.frame = CGRect(x: collection.frame.origin.x, y: collection.contentOffset.y + 0.01 , width: cellSize.width, height: cellSize.height)
+        let shitIdx = Int(collection.contentOffset.y/titleHeight)
+        if shitIdx < 0 {
+            return
+        }
+        
+        let index = attribute.zIndex
+        var y = originY
+        
+        
+        if attribute.indexPath == selectedIP{
+            attribute.isExpand = true
+        }
+        else{
+            attribute.isExpand = false
+        }
+        
+        if attribute.indexPath == next{
+            y += cellSize.height
+        }
+        else{
+            y += titleHeight
+        }
+        
+        var currentFrame = CGRect(x: collection.frame.origin.x, y: y, width: cellSize.width, height: cellSize.height)
+
+        originY = y
+        if index <= shitIdx, index >= shitIdx{
+            attribute.frame = CGRect(x: currentFrame.origin.x, y: collection.contentOffset.y, width: cellSize.width, height: cellSize.height)
+        }
+        else if index <= shitIdx, currentFrame.maxY > collection.contentOffset.y{
+            currentFrame.origin.y -= (currentFrame.maxY - collection.contentOffset.y )
+            originY = currentFrame.origin.y
+            attribute.frame = currentFrame
+        }
+        else{
+            attribute.frame = currentFrame
+        }
     }
     
 
