@@ -56,7 +56,14 @@ public class MMCollectionView: UICollectionView {
  
 }
 
+
+
+
+
+
 extension MMCollectionView: UICollectionViewDelegate {
+    
+    
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let c = cell as? CardCell {
             c.collectionV = collectionView
@@ -69,6 +76,10 @@ extension MMCollectionView: UICollectionViewDelegate {
         }
         _proxyDelegate.forwardDelegate?.collectionView?(collectionView, willDisplay: cell, forItemAt: indexPath)
     }
+    
+    
+    
+    
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView.collectionViewLayout {
         case let l as CustomCardLayout:
@@ -83,7 +94,7 @@ extension MMCollectionView: UICollectionViewDelegate {
 extension MMCollectionView: UIViewControllerTransitioningDelegate {
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.transitionMode = .Present
+        transition.transitionMode = .present
         if let custom = self.collectionViewLayout as? CustomCardLayout , let path = custom.selectPath {
 
             transition.cardView = self.cellForItem(at: path)
@@ -93,7 +104,7 @@ extension MMCollectionView: UIViewControllerTransitioningDelegate {
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.transitionMode = .Dismiss
+        transition.transitionMode = .dismiss
         if let custom = self.collectionViewLayout as? CustomCardLayout {
             custom.isFullScreen = false
         }

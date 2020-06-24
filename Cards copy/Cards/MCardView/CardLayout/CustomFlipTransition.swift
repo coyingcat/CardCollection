@@ -9,14 +9,17 @@
 import UIKit
 
 enum TransitionMode: Int {
-    case Present, Dismiss
+    case present, dismiss
 }
 
 public class CustomFlipTransition: NSObject,UIViewControllerAnimatedTransitioning {
     var duration = 0.3
-    var transitionMode:TransitionMode = .Present
+    var transitionMode:TransitionMode = .present
     var cardView:UICollectionViewCell!
     var originalCardFrame = CGRect.zero
+    
+    
+    
     lazy var blurView:UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -34,7 +37,7 @@ public class CustomFlipTransition: NSObject,UIViewControllerAnimatedTransitionin
         let fromView = transitionContext.view(forKey: .from)
         let viewRadius = self.cardView.layer.cornerRadius
         
-        if self.transitionMode == .Present {
+        if self.transitionMode == .present {
          
             originalCardFrame = self.cardView.frame
             let toViewF = self.cardView.superview!.convert(self.cardView.frame, to: nil)
