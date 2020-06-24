@@ -74,7 +74,7 @@ extension MMCollectionView: UICollectionViewDelegate {
             }
             c.isHidden = false
         }
-        _proxyDelegate.forwardDelegate?.collectionView?(collectionView, willDisplay: cell, forItemAt: indexPath)
+   
     }
     
     
@@ -87,7 +87,7 @@ extension MMCollectionView: UICollectionViewDelegate {
         default:
             break
         }
-        _proxyDelegate.forwardDelegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
+     
     }
 }
 

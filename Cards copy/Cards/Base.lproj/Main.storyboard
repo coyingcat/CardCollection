@@ -52,10 +52,6 @@
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="ihi-qx-tfk" id="Esb-y1-5NF"/>
-                                    <outlet property="delegate" destination="ihi-qx-tfk" id="gBc-zl-mnR"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>

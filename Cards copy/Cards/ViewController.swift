@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
     var sectionData = [["CardA","CardB","CardC"],["CardB","CardB","CardB"],["CardC"],["CardD"]]
     @IBOutlet weak var cardCollection: MMCollectionView!
     
@@ -17,6 +17,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardCollection.delegate = self
+        cardCollection.dataSource = self
+        
+        
+        
         cardCollection.register(UINib(nibName: "CardACell", bundle: nil), forCellWithReuseIdentifier: "CardA")
         cardCollection.register(UINib(nibName: "CardBCell", bundle: nil), forCellWithReuseIdentifier: "CardB")
         cardCollection.register(UINib(nibName: "CardCCell", bundle: nil), forCellWithReuseIdentifier: "CardC")
@@ -38,7 +43,7 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController: UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sectionData.count
     }
@@ -47,10 +52,7 @@ extension ViewController: UICollectionViewDataSource {
         return sectionData[section].count
     }
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return self.card(collectionView: collectionView, cellForItemAt: indexPath)
-    }
-    
-    fileprivate func card(collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+   
         let idenTifier = sectionData[indexPath.section][indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idenTifier, for: indexPath)
         switch cell {
