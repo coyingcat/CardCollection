@@ -78,33 +78,43 @@ public class CustomCardLayout: UICollectionViewLayout {
     
     public var cardHeight: CGFloat = 320 {
         didSet {
-            var c = self.cellSize
+            var c = cellSize
             c.height = cardHeight
-            self.cellSize = c
-            self.collectionView?.performBatchUpdates({ 
+            cellSize = c
+            collectionView?.performBatchUpdates({ 
                 self.invalidateLayout()
             }, completion: nil)
         }
     }
     
     lazy var cellSize:CGSize = {
-        let w = self.collectionView!.bounds.width
-        let h = self.collectionView!.bounds.height * BottomPercent
+        guard let collection = collectionView else {
+            return .zero
+        }
+        
+        let w = collection.bounds.width
+        let h = collection.bounds.height * BottomPercent
         let size = CGSize(width: w, height: h)
         return size
     }()
 
     override public var collectionViewContentSize: CGSize {
-            let sections = self.collectionView!.numberOfSections
-            let total = (0..<sections).reduce(0) { (total, current) -> Int in
-                return total + self.collectionView!.numberOfItems(inSection: current)
-            }
-            let contentHeight = titleHeight*CGFloat(total-1) + cellSize.height
-            return CGSize(width: cellSize.width, height: contentHeight )
+        guard let collection = collectionView else {
+            return .zero
+        }
+        let sections = collection.numberOfSections
+        let total = (0..<sections).reduce(0){ (t, current) -> Int in
+            t + collection.numberOfItems(inSection: current)
+        }
+        let contentHeight = titleHeight * CGFloat(total-1) + cellSize.height
+        return CGSize(width: cellSize.width, height: contentHeight )
     }
     
-     func updateCellSize() {
-        self.cellSize.width  = self.collectionView!.frame.width
+     func updateCellSize(){
+        guard let collection = collectionView else {
+            return
+        }
+        self.cellSize.width  = collection.frame.width
         self.cellSize.height = cardHeight * BottomPercent
     }
     
