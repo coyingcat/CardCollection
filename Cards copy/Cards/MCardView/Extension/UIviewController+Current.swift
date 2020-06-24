@@ -50,8 +50,5 @@ extension UIViewController{
         }
     }
     
-    static func currentViewController() -> UIViewController {
-        let vc:UIViewController! = UIApplication.shared.keyWindow?.rootViewController
-        return UIViewController.findBestViewController(vc)
-    }
+
 }

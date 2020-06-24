@@ -69,18 +69,7 @@ public class MMCollectionView: UICollectionView {
         }
     }
 
-    public func presentViewController(to vc:UIViewController) {
-
-        if (self.collectionViewLayout as? CustomCardLayout)?.selectPath == nil {
-            print ("You need select a cell")
-            return
-        }
-        
-        let current = UIViewController.currentViewController()
-        vc.transitioningDelegate = self
-        vc.modalPresentationStyle = .custom
-        current.present(vc, animated: true, completion: nil)
-    }
+ 
 }
 
 extension MMCollectionView: UICollectionViewDelegate {

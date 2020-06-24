@@ -54,15 +54,6 @@ extension ViewController: UICollectionViewDataSource {
         let idenTifier = sectionData[indexPath.section][indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idenTifier, for: indexPath)
         switch cell {
-        case let c as CardCCell:
-            
-            c.clickCallBack {
-                if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Second") as? SecondViewController {
-                    vc.delegate = self
-                    //                    (self.cardCollection.collectionViewLayout as? CustomCardLayout)?.isFullScreen = true
-                    self.cardCollection.presentViewController(to: vc)
-                }
-            }
         case let c as CardBCell:
             c.imgV.image = #imageLiteral(resourceName: "image1")
         default:
