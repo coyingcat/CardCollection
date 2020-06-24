@@ -68,14 +68,11 @@ extension MMCollectionView: UICollectionViewDelegate {
     
     
     
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch collectionView.collectionViewLayout {
-        case let l as CustomCardLayout:
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        
+        if let l = collectionView.collectionViewLayout as? CustomCardLayout{
             l.selectPath = indexPath
-        default:
-            break
         }
-     
     }
 }
 
