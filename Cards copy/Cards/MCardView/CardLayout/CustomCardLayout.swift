@@ -172,15 +172,15 @@ public class CustomCardLayout: UICollectionViewLayout {
         currentFrame = CGRect(x: self.collectionView!.frame.origin.x, y: titleHeight * CGFloat(index), width: cellSize.width, height: cellSize.height)
  
                 
-                if index <= shitIdx && (index >= shitIdx) {
-                    attribute.frame = CGRect(x: currentFrame.origin.x, y: self.collectionView!.contentOffset.y, width: cellSize.width, height: cellSize.height)
-                } else if index <= shitIdx && currentFrame.maxY > self.collectionView!.contentOffset.y{
-                    currentFrame.origin.y -= (currentFrame.maxY - self.collectionView!.contentOffset.y )
-                    attribute.frame = currentFrame
-                }else {
-                    attribute.frame = currentFrame
-                }
-      
+        if index <= shitIdx && (index >= shitIdx) {
+            attribute.frame = CGRect(x: currentFrame.origin.x, y: self.collectionView!.contentOffset.y, width: cellSize.width, height: cellSize.height)
+        } else if index <= shitIdx && currentFrame.maxY > self.collectionView!.contentOffset.y{
+            currentFrame.origin.y -= (currentFrame.maxY - self.collectionView!.contentOffset.y )
+            attribute.frame = currentFrame
+        }else {
+            attribute.frame = currentFrame
+        }
+
     }
     
     fileprivate func setSelect(attribute:CardLayoutAttributes) {
