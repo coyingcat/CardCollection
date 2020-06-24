@@ -133,7 +133,7 @@ public class CustomCardLayout: UICollectionViewLayout {
                 })
                 return
             }
-            let list = self.generateAttributeList()
+            let list = generateAttributeList
             if list.count > 0 {
                 attributeList.removeAll()
                 attributeList += list
@@ -141,7 +141,7 @@ public class CustomCardLayout: UICollectionViewLayout {
         }
     }
     
-    fileprivate func generateAttributeList() -> [CardLayoutAttributes] {
+    fileprivate var generateAttributeList: [CardLayoutAttributes] {
         var arr = [CardLayoutAttributes]()
         guard let collection = collectionView else {
             return arr
@@ -153,7 +153,7 @@ public class CustomCardLayout: UICollectionViewLayout {
         
         for sec in 0..<sections {
             let count = collection.numberOfItems(inSection: sec)
-            if itemsIdx + count-1 < startIdx {
+            if (itemsIdx + count - 1) < startIdx {
                 itemsIdx += count
                 continue
             }
@@ -209,7 +209,7 @@ public class CustomCardLayout: UICollectionViewLayout {
             return
         }
         let baseHeight = collection.contentOffset.y + collection.bounds.height * 0.9
-        let bottomH = cellSize.height  * 0.1
+        let bottomH = cellSize.height * 0.1
         let margin:CGFloat = bottomH/CGFloat(bottomShowCount-1)
         attribute.isExpand = false
         let yPos = isFullScreen ? (collection.contentOffset.y + collection.bounds.height) : ( bottomIdx * margin + baseHeight )
@@ -226,8 +226,11 @@ public class CustomCardLayout: UICollectionViewLayout {
     }
 
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        guard let collection = collectionView else {
+            return nil
+        }
         var reset = rect
-        reset.origin.y = self.collectionView!.contentOffset.y
+        reset.origin.y = collection.contentOffset.y
         
         let arr = attributeList.filter {
             var fix = $0.frame
