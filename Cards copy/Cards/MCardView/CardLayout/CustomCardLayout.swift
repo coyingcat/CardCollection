@@ -142,15 +142,17 @@ public class CustomCardLayout: UICollectionViewLayout {
     }
     
     fileprivate func generateAttributeList() -> [CardLayoutAttributes] {
-
         var arr = [CardLayoutAttributes]()
-        let offsetY = self.collectionView!.contentOffset.y > 0 ? self.collectionView!.contentOffset.y : 0
+        guard let collection = collectionView else {
+            return arr
+        }
+        let offsetY = collection.contentOffset.y > 0 ? collection.contentOffset.y : 0
         let startIdx = abs(Int(offsetY/titleHeight))
-        let sections = self.collectionView!.numberOfSections
+        let sections = collection.numberOfSections
         var itemsIdx = 0
         
         for sec in 0..<sections {
-            let count = self.collectionView!.numberOfItems(inSection: sec)
+            let count = collection.numberOfItems(inSection: sec)
             if itemsIdx + count-1 < startIdx {
                 itemsIdx += count
                 continue
