@@ -201,18 +201,18 @@ public class CustomCardLayout: UICollectionViewLayout {
         }
         attribute.isExpand = true
         // 0.01 prevent no reload
-        attribute.frame = CGRect.init(x: collection.frame.origin.x, y: collection.contentOffset.y + 0.01 , width: cellSize.width, height: cellSize.height)
+        attribute.frame = CGRect(x: collection.frame.origin.x, y: collection.contentOffset.y + 0.01 , width: cellSize.width, height: cellSize.height)
     }
     
     fileprivate func setBottom(attribute:CardLayoutAttributes, bottomIdx:inout CGFloat) {
         guard let collection = collectionView else {
             return
         }
-        let baseHeight = collection.contentOffset.y + collection.bounds.height * 0.90
+        let baseHeight = collection.contentOffset.y + collection.bounds.height * 0.9
         let bottomH = cellSize.height  * 0.1
         let margin:CGFloat = bottomH/CGFloat(bottomShowCount-1)
         attribute.isExpand = false
-        let yPos = (self.isFullScreen) ? (collection.contentOffset.y + collection.bounds.height) : bottomIdx * margin + baseHeight
+        let yPos = isFullScreen ? (collection.contentOffset.y + collection.bounds.height) : ( bottomIdx * margin + baseHeight )
         attribute.frame = CGRect(x: 0, y: yPos, width: cellSize.width, height: cellSize.height)
         bottomIdx += 1
     }
@@ -220,8 +220,7 @@ public class CustomCardLayout: UICollectionViewLayout {
     override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
         guard let first = attributeList.first(where: { $0.indexPath == indexPath }) else {
-            let attr = CardLayoutAttributes(forCellWith: indexPath)
-            return attr
+            return CardLayoutAttributes(forCellWith: indexPath)
         }
         return first
     }
@@ -230,7 +229,7 @@ public class CustomCardLayout: UICollectionViewLayout {
         var reset = rect
         reset.origin.y = self.collectionView!.contentOffset.y
         
-        let arr =  attributeList.filter {
+        let arr = attributeList.filter {
             var fix = $0.frame
             fix.size.height = titleHeight
             return fix.intersects(reset)
@@ -257,15 +256,15 @@ public class CustomCardLayout: UICollectionViewLayout {
     
     override public func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let at = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
-        guard let collection = collectionView else {
+        guard let collection = collectionView, let a = at else {
             return at
         }
         if self.insertPath.contains(itemIndexPath) {
             let randomLoc = (itemIndexPath.row%2 == 0) ? 1 : -1
             let x = collection.frame.width * CGFloat(-randomLoc)
-            at?.transform = CGAffineTransform(translationX: x, y: 0)
+            a.transform = CGAffineTransform(translationX: x, y: 0)
         }
-        return at
+        return a
     }
     
     override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
