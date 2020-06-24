@@ -90,20 +90,17 @@ public class CustomCardLayout: UICollectionViewLayout {
     lazy var cellSize:CGSize = {
         let w = self.collectionView!.bounds.width
         let h = self.collectionView!.bounds.height * BottomPercent
-        let size = CGSize.init(width: w, height: h)
+        let size = CGSize(width: w, height: h)
         return size
     }()
 
     override public var collectionViewContentSize: CGSize {
-        set {}
-        get {
             let sections = self.collectionView!.numberOfSections
             let total = (0..<sections).reduce(0) { (total, current) -> Int in
                 return total + self.collectionView!.numberOfItems(inSection: current)
             }
             let contentHeight = titleHeight*CGFloat(total-1) + cellSize.height
             return CGSize(width: cellSize.width, height: contentHeight )
-        }
     }
     
      func updateCellSize() {
@@ -118,19 +115,19 @@ public class CustomCardLayout: UICollectionViewLayout {
         }
         let update = collection.calculate.isNeedUpdate()
     
-        if let select = self.selectPath , !update {
+        if let select = selectPath, !update {
             
             var bottomIdx:CGFloat = 0
             self.attributeList.forEach({
                 if $0.indexPath == select {
-                    self.setSelect(attribute: $0)
+                    setSelect(attribute: $0)
                 } else {
-                    self.setBottom(attribute: $0, bottomIdx: &bottomIdx)
+                    setBottom(attribute: $0, bottomIdx: &bottomIdx)
                 }
             })
         } else {
             _selectPath = nil
-            if !update , collection.calculate.totalCount == self.attributeList.count {
+            if !update , collection.calculate.totalCount == attributeList.count {
                 attributeList.forEach({ [unowned self] in
                     self.setNoSelect(attribute: $0)
                 })
@@ -138,8 +135,8 @@ public class CustomCardLayout: UICollectionViewLayout {
             }
             let list = self.generateAttributeList()
             if list.count > 0 {
-                self.attributeList.removeAll()
-                self.attributeList += list
+                attributeList.removeAll()
+                attributeList += list
             }
         }
     }
