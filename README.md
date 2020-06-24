@@ -1,4 +1,6 @@
-# CardView,  Swift 5, from MillmanY/MMCardView
+# CardView, Swift 5
+
+## from MillmanY/MMCardView
 
 
 ## Example
