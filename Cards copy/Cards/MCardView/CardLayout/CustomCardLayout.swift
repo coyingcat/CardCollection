@@ -182,13 +182,12 @@ public class CustomCardLayout: UICollectionViewLayout {
         }
         attribute.isExpand = false
         let index = attribute.zIndex
-        var currentFrame = CGRect.zero
-        currentFrame = CGRect(x: collection.frame.origin.x, y: titleHeight * CGFloat(index), width: cellSize.width, height: cellSize.height)
+        var currentFrame = CGRect(x: collection.frame.origin.x, y: titleHeight * CGFloat(index), width: cellSize.width, height: cellSize.height)
  
                 
-        if index <= shitIdx && (index >= shitIdx) {
+        if index <= shitIdx , index >= shitIdx{
             attribute.frame = CGRect(x: currentFrame.origin.x, y: collection.contentOffset.y, width: cellSize.width, height: cellSize.height)
-        } else if index <= shitIdx && currentFrame.maxY > collection.contentOffset.y{
+        } else if index <= shitIdx, currentFrame.maxY > collection.contentOffset.y{
             currentFrame.origin.y -= (currentFrame.maxY - collection.contentOffset.y )
             attribute.frame = currentFrame
         }else {
