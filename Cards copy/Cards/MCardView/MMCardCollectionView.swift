@@ -10,19 +10,7 @@ import UIKit
 
 public class MMCollectionView: UICollectionView {
     fileprivate var transition = CustomFlipTransition(duration: 0.5)
-    fileprivate lazy var _proxyDelegate: DelegateProxy = {
-        return DelegateProxy(parentObject: self)
-    }()
 
-    
-    override public var delegate: UICollectionViewDelegate? {
-        get {
-            return super.delegate
-        } set {
-            self._proxyDelegate.forwardDelegate = newValue
-            super.delegate = _proxyDelegate
-        }
-    }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,6 +23,7 @@ public class MMCollectionView: UICollectionView {
     }
     
     func setup() {
+        self.delegate = self
         self.collectionViewLayout = CustomCardLayout()
    
     }

@@ -30,7 +30,6 @@
 		26CE8F9724A2F3B200A4D53C /* CustomCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F8E24A2F3B200A4D53C /* CustomCardLayout.swift */; };
 		26CE8F9924A2F3B200A4D53C /* MMCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F9024A2F3B200A4D53C /* MMCardCollectionView.swift */; };
 		26CE8F9A24A2F3B200A4D53C /* CollectionViewCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F9124A2F3B200A4D53C /* CollectionViewCalculate.swift */; };
-		26CE8F9C24A3223400A4D53C /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F9B24A3223400A4D53C /* DelegateProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +79,6 @@
 		26CE8F8E24A2F3B200A4D53C /* CustomCardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCardLayout.swift; sourceTree = "<group>"; };
 		26CE8F9024A2F3B200A4D53C /* MMCardCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMCardCollectionView.swift; sourceTree = "<group>"; };
 		26CE8F9124A2F3B200A4D53C /* CollectionViewCalculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCalculate.swift; sourceTree = "<group>"; };
-		26CE8F9B24A3223400A4D53C /* DelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +186,6 @@
 		26CE8F8624A2F3B200A4D53C /* MCardView */ = {
 			isa = PBXGroup;
 			children = (
-				26CE8F9B24A3223400A4D53C /* DelegateProxy.swift */,
 				26CE8F8824A2F3B200A4D53C /* Extension */,
 				26CE8F8B24A2F3B200A4D53C /* CardLayout */,
 				26CE8F9024A2F3B200A4D53C /* MMCardCollectionView.swift */,
@@ -361,7 +358,6 @@
 				26CE8F9324A2F3B200A4D53C /* UIviewController+Current.swift in Sources */,
 				26CE8F4324A2F29600A4D53C /* AppDelegate.swift in Sources */,
 				26CE8F4524A2F29600A4D53C /* SceneDelegate.swift in Sources */,
-				26CE8F9C24A3223400A4D53C /* DelegateProxy.swift in Sources */,
 				26CE8F7F24A2F30C00A4D53C /* CardCCell.swift in Sources */,
 				26CE8F9524A2F3B200A4D53C /* CardCell.swift in Sources */,
 				26CE8F9724A2F3B200A4D53C /* CustomCardLayout.swift in Sources */,

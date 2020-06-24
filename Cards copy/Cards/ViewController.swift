@@ -17,7 +17,7 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cardCollection.delegate = self
+
         cardCollection.dataSource = self
         
         
@@ -43,7 +43,7 @@ class ViewController: UIViewController{
 
 
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension ViewController: UICollectionViewDataSource{
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sectionData.count
     }
