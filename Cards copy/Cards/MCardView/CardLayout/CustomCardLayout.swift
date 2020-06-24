@@ -146,7 +146,7 @@ public class CustomCardLayout: UICollectionViewLayout {
         guard let collection = collectionView else {
             return arr
         }
-        let offsetY = collection.contentOffset.y > 0 ? collection.contentOffset.y : 0
+        let offsetY = max(collection.contentOffset.y, 0)
         let startIdx = abs(Int(offsetY/titleHeight))
         let sections = collection.numberOfSections
         var itemsIdx = 0
@@ -290,7 +290,7 @@ public class CustomCardLayout: UICollectionViewLayout {
             insertPath.removeAll()
             
             let vi = self.collectionView!.subviews.sorted {
-                return $0.layer.zPosition < $1.layer.zPosition
+                $0.layer.zPosition < $1.layer.zPosition
             }
             
             vi.forEach({ (vi) in

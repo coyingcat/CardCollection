@@ -26,7 +26,7 @@ open class CardCell:UICollectionViewCell{
     
     @objc func pan(rec:UIPanGestureRecognizer){
         let point = rec.location(in: collectionV)
-        let shiftY:CGFloat = (point.y - originTouchY  > 0) ? point.y - originTouchY : 0
+        let shiftY:CGFloat = max(point.y - originTouchY, 0)
         switch rec.state {
             case .began:
                 originTouchY = point.y
