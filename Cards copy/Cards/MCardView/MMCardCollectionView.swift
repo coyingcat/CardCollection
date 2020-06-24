@@ -31,12 +31,11 @@ public class MMCollectionView: UICollectionView {
     override public var bounds: CGRect {
         didSet {
             if oldValue != bounds, bounds.size != .zero {
-                switch collectionViewLayout {
-                case let l as CustomCardLayout:
+               
+                if let l = collectionViewLayout as? CustomCardLayout{
                     l.updateCellSize()
-                default:
-                    break
                 }
+              
                 self.reloadData()
             }
         }
