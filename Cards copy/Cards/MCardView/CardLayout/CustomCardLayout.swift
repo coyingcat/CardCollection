@@ -10,10 +10,7 @@ import UIKit
 
 let BottomPercent:CGFloat = 0.85
 
-public enum SequenceStyle:Int {
-    case normal
-    case cover
-}
+
 
 class CardLayoutAttributes: UICollectionViewLayoutAttributes {
     var isExpand = false
@@ -29,10 +26,7 @@ public class CustomCardLayout: UICollectionViewLayout {
     fileprivate var insertPath = [IndexPath]()
     fileprivate var deletePath = [IndexPath]()
     fileprivate var attributeList = [CardLayoutAttributes]()
-    public var showStyle:SequenceStyle = .cover
-    
-    
-    
+
     fileprivate var _selectPath: IndexPath? {
         didSet {
             self.collectionView!.isScrollEnabled = (_selectPath == nil)
@@ -176,8 +170,7 @@ public class CustomCardLayout: UICollectionViewLayout {
         let index = attribute.zIndex
         var currentFrame = CGRect.zero
         currentFrame = CGRect(x: self.collectionView!.frame.origin.x, y: titleHeight * CGFloat(index), width: cellSize.width, height: cellSize.height)
-        switch showStyle {
-            case .cover:
+ 
                 
                 if index <= shitIdx && (index >= shitIdx) {
                     attribute.frame = CGRect(x: currentFrame.origin.x, y: self.collectionView!.contentOffset.y, width: cellSize.width, height: cellSize.height)
@@ -187,9 +180,7 @@ public class CustomCardLayout: UICollectionViewLayout {
                 }else {
                     attribute.frame = currentFrame
                 }
-            case .normal:
-                attribute.frame = currentFrame
-        }
+      
     }
     
     fileprivate func setSelect(attribute:CardLayoutAttributes) {
