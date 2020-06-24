@@ -113,7 +113,10 @@ public class CustomCardLayout: UICollectionViewLayout {
     
     override public func prepare() {
         super.prepare()
-        let update = self.collectionView!.calculate.isNeedUpdate()
+        guard let collection = collectionView else {
+            return
+        }
+        let update = collection.calculate.isNeedUpdate()
     
         if let select = self.selectPath , !update {
             
@@ -127,7 +130,7 @@ public class CustomCardLayout: UICollectionViewLayout {
             })
         } else {
             _selectPath = nil
-            if !update && self.collectionView!.calculate.totalCount == self.attributeList.count {
+            if !update , collection.calculate.totalCount == self.attributeList.count {
                 attributeList.forEach({ [unowned self] in
                     self.setNoSelect(attribute: $0)
                 })
@@ -160,7 +163,7 @@ public class CustomCardLayout: UICollectionViewLayout {
                     let indexPath = IndexPath(item: item, section: sec)
                     let attr = CardLayoutAttributes(forCellWith: indexPath)
                     attr.zIndex = itemsIdx
-                    self.setNoSelect(attribute: attr)
+                    setNoSelect(attribute: attr)
                     arr.append(attr)
                 }
                 itemsIdx += 1
@@ -170,21 +173,23 @@ public class CustomCardLayout: UICollectionViewLayout {
     }
     
     fileprivate func setNoSelect(attribute:CardLayoutAttributes) {
-
-        let shitIdx = Int(self.collectionView!.contentOffset.y/titleHeight)
+        guard let collection = collectionView else {
+            return
+        }
+        let shitIdx = Int(collection.contentOffset.y/titleHeight)
         if shitIdx < 0 {
             return
         }
         attribute.isExpand = false
         let index = attribute.zIndex
         var currentFrame = CGRect.zero
-        currentFrame = CGRect(x: self.collectionView!.frame.origin.x, y: titleHeight * CGFloat(index), width: cellSize.width, height: cellSize.height)
+        currentFrame = CGRect(x: collection.frame.origin.x, y: titleHeight * CGFloat(index), width: cellSize.width, height: cellSize.height)
  
                 
         if index <= shitIdx && (index >= shitIdx) {
-            attribute.frame = CGRect(x: currentFrame.origin.x, y: self.collectionView!.contentOffset.y, width: cellSize.width, height: cellSize.height)
-        } else if index <= shitIdx && currentFrame.maxY > self.collectionView!.contentOffset.y{
-            currentFrame.origin.y -= (currentFrame.maxY - self.collectionView!.contentOffset.y )
+            attribute.frame = CGRect(x: currentFrame.origin.x, y: collection.contentOffset.y, width: cellSize.width, height: cellSize.height)
+        } else if index <= shitIdx && currentFrame.maxY > collection.contentOffset.y{
+            currentFrame.origin.y -= (currentFrame.maxY - collection.contentOffset.y )
             attribute.frame = currentFrame
         }else {
             attribute.frame = currentFrame
@@ -193,17 +198,23 @@ public class CustomCardLayout: UICollectionViewLayout {
     }
     
     fileprivate func setSelect(attribute:CardLayoutAttributes) {
+        guard let collection = collectionView else {
+            return
+        }
         attribute.isExpand = true
         // 0.01 prevent no reload
-        attribute.frame = CGRect.init(x: self.collectionView!.frame.origin.x, y: self.collectionView!.contentOffset.y+0.01 , width: cellSize.width, height: cellSize.height)
+        attribute.frame = CGRect.init(x: collection.frame.origin.x, y: collection.contentOffset.y + 0.01 , width: cellSize.width, height: cellSize.height)
     }
     
     fileprivate func setBottom(attribute:CardLayoutAttributes, bottomIdx:inout CGFloat) {
-        let baseHeight = self.collectionView!.contentOffset.y + collectionView!.bounds.height * 0.90
+        guard let collection = collectionView else {
+            return
+        }
+        let baseHeight = collection.contentOffset.y + collection.bounds.height * 0.90
         let bottomH = cellSize.height  * 0.1
         let margin:CGFloat = bottomH/CGFloat(bottomShowCount-1)
         attribute.isExpand = false
-        let yPos = (self.isFullScreen) ? (self.collectionView!.contentOffset.y + collectionView!.bounds.height) : bottomIdx * margin + baseHeight
+        let yPos = (self.isFullScreen) ? (collection.contentOffset.y + collection.bounds.height) : bottomIdx * margin + baseHeight
         attribute.frame = CGRect(x: 0, y: yPos, width: cellSize.width, height: cellSize.height)
         bottomIdx += 1
     }
