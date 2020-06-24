@@ -240,23 +240,29 @@ public class CustomCardLayout: UICollectionViewLayout {
     
     override public func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let at = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
-        if self.deletePath.contains(itemIndexPath) {
+        guard let collection = collectionView, let a = at else {
+            return at
+        }
+        if deletePath.contains(itemIndexPath) {
             if let original = attributeList.first(where: { $0.indexPath == itemIndexPath }) {
-                at?.frame = original.frame
+                a.frame = original.frame
             }
-            let randomLoc = (itemIndexPath.row%2 == 0) ? 1 : -1
-            let x = self.collectionView!.frame.width * CGFloat(randomLoc)
-            at?.transform = CGAffineTransform(translationX: x, y: 0)
+            let randomLoc = (itemIndexPath.row % 2 == 0) ? 1 : -1
+            let x = collection.frame.width * CGFloat(randomLoc)
+            a.transform = CGAffineTransform(translationX: x, y: 0)
         }
         
-        return at
+        return a
     }
     
     override public func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let at = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
+        guard let collection = collectionView else {
+            return at
+        }
         if self.insertPath.contains(itemIndexPath) {
             let randomLoc = (itemIndexPath.row%2 == 0) ? 1 : -1
-            let x = self.collectionView!.frame.width * CGFloat(-randomLoc)
+            let x = collection.frame.width * CGFloat(-randomLoc)
             at?.transform = CGAffineTransform(translationX: x, y: 0)
         }
         return at
@@ -277,7 +283,8 @@ public class CustomCardLayout: UICollectionViewLayout {
                 if let p = path {
                     deletePath.append(p)
                 }
-            } else if let path = update.indexPathAfterUpdate, update.updateAction == .insert {
+            }
+            else if let path = update.indexPathAfterUpdate, update.updateAction == .insert {
                 insertPath.append(path)
             }
         }
@@ -285,16 +292,19 @@ public class CustomCardLayout: UICollectionViewLayout {
     
     override public func finalizeCollectionViewUpdates() {
         super.finalizeCollectionViewUpdates()
+        guard let collection = collectionView else {
+            return
+        }
         if deletePath.count > 0 || insertPath.count > 0 {
             deletePath.removeAll()
             insertPath.removeAll()
             
-            let vi = self.collectionView!.subviews.sorted {
+            let vi = collection.subviews.sorted {
                 $0.layer.zPosition < $1.layer.zPosition
             }
             
             vi.forEach({ (vi) in
-                collectionView?.addSubview(vi)
+                collection.addSubview(vi)
             })
             
         }
