@@ -22,7 +22,6 @@
 		26CE8F8124A2F30C00A4D53C /* CardBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F7724A2F30C00A4D53C /* CardBCell.swift */; };
 		26CE8F8224A2F30C00A4D53C /* CardACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CE8F7824A2F30C00A4D53C /* CardACell.xib */; };
 		26CE8F8324A2F30C00A4D53C /* CardACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F7924A2F30C00A4D53C /* CardACell.swift */; };
-		26CE8F8424A2F30C00A4D53C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F7A24A2F30C00A4D53C /* SecondViewController.swift */; };
 		26CE8F8524A2F30C00A4D53C /* BannerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F7C24A2F30C00A4D53C /* BannerViewCell.swift */; };
 		26CE8F9224A2F3B200A4D53C /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F8724A2F3B200A4D53C /* DelegateProxy.swift */; };
 		26CE8F9324A2F3B200A4D53C /* UIviewController+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F8924A2F3B200A4D53C /* UIviewController+Current.swift */; };
@@ -74,7 +73,6 @@
 		26CE8F7724A2F30C00A4D53C /* CardBCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBCell.swift; sourceTree = "<group>"; };
 		26CE8F7824A2F30C00A4D53C /* CardACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardACell.xib; sourceTree = "<group>"; };
 		26CE8F7924A2F30C00A4D53C /* CardACell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardACell.swift; sourceTree = "<group>"; };
-		26CE8F7A24A2F30C00A4D53C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		26CE8F7C24A2F30C00A4D53C /* BannerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewCell.swift; sourceTree = "<group>"; };
 		26CE8F8724A2F3B200A4D53C /* DelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProxy.swift; sourceTree = "<group>"; };
 		26CE8F8924A2F3B200A4D53C /* UIviewController+Current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIviewController+Current.swift"; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				26CE8F4824A2F29600A4D53C /* Main.storyboard */,
 				26CE8F8624A2F3B200A4D53C /* MCardView */,
 				26CE8F4424A2F29600A4D53C /* SceneDelegate.swift */,
-				26CE8F7A24A2F30C00A4D53C /* SecondViewController.swift */,
 				26CE8F4624A2F29600A4D53C /* ViewController.swift */,
 			);
 			path = Cards;
@@ -358,7 +355,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CE8F9924A2F3B200A4D53C /* MMCardCollectionView.swift in Sources */,
-				26CE8F8424A2F30C00A4D53C /* SecondViewController.swift in Sources */,
 				26CE8F8024A2F30C00A4D53C /* CardDCell.swift in Sources */,
 				26CE8F8324A2F30C00A4D53C /* CardACell.swift in Sources */,
 				26CE8F9A24A2F3B200A4D53C /* CollectionViewCalculate.swift in Sources */,

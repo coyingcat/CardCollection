@@ -63,25 +63,3 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-
-
-
-extension ViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    }
-}
-
-
-
-
-extension ViewController:SecondViewProtocol {
-    func removeCard() {
-        
-        if let layout = self.cardCollection.collectionViewLayout as? CustomCardLayout , let path = layout.selectPath {
-            sectionData[path.section].remove(at: path.row)
-            cardCollection.deleteItems(at: [path])
-        }
-//       card.removeSelectCard()
-    }
-}
-
