@@ -72,20 +72,6 @@
                                     <action selector="segmentActionWithSeg:" destination="ihi-qx-tfk" eventType="valueChanged" id="fdU-uj-EWp"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djo-Mz-byY">
-                                <rect key="frame" x="301" y="44" width="109" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="109" id="6AN-g5-h9x"/>
-                                    <constraint firstAttribute="height" constant="30" id="DTe-as-DZT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Filter">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="filterAction" destination="ihi-qx-tfk" eventType="touchUpInside" id="TF8-8R-FRK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
@@ -93,9 +79,7 @@
                             <constraint firstItem="P63-ib-o8H" firstAttribute="top" secondItem="eKt-14-VZp" secondAttribute="bottom" constant="5" id="9gt-hW-0fF"/>
                             <constraint firstItem="umo-WW-Q45" firstAttribute="top" secondItem="eKt-14-VZp" secondAttribute="bottom" constant="44" id="FPb-DI-hJ8"/>
                             <constraint firstAttribute="trailing" secondItem="umo-WW-Q45" secondAttribute="trailing" id="M1f-6J-hPc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="djo-Mz-byY" secondAttribute="trailing" constant="-16" id="e7S-7D-70L"/>
                             <constraint firstAttribute="leadingMargin" secondItem="P63-ib-o8H" secondAttribute="leading" id="een-wc-5bH"/>
-                            <constraint firstItem="djo-Mz-byY" firstAttribute="top" secondItem="eKt-14-VZp" secondAttribute="bottom" id="ezR-2I-cCw"/>
                             <constraint firstItem="UKT-aw-9wA" firstAttribute="top" secondItem="umo-WW-Q45" secondAttribute="bottom" id="mfx-Oy-RhS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="maI-3d-Zcu"/>
