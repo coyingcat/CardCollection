@@ -41,7 +41,7 @@ public class MMCollectionView: UICollectionView {
     
     override public var bounds: CGRect {
         didSet {
-            if oldValue != bounds && bounds.size != .zero {
+            if oldValue != bounds, bounds.size != .zero {
                 switch collectionViewLayout {
                 case let l as CustomCardLayout:
                     l.updateCellSize()

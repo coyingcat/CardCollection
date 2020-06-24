@@ -31,7 +31,7 @@ open class CardCell:UICollectionViewCell{
             case .began:
                 originTouchY = point.y
             case .changed:
-                self.transform = CGAffineTransform.init(translationX: 0, y: shiftY)
+                self.transform = CGAffineTransform(translationX: 0, y: shiftY)
             default:
                 let isNeedReload = (shiftY > self.contentView.frame.height/3) ? true : false
                 let resetY = (isNeedReload) ? self.contentView.bounds.height * 1.2 : 0
