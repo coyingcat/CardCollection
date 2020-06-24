@@ -29,7 +29,6 @@
 		26CE8F9524A2F3B200A4D53C /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F8C24A2F3B200A4D53C /* CardCell.swift */; };
 		26CE8F9624A2F3B200A4D53C /* CustomFlipTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F8D24A2F3B200A4D53C /* CustomFlipTransition.swift */; };
 		26CE8F9724A2F3B200A4D53C /* CustomCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F8E24A2F3B200A4D53C /* CustomCardLayout.swift */; };
-		26CE8F9824A2F3B200A4D53C /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 26CE8F8F24A2F3B200A4D53C /* .gitkeep */; };
 		26CE8F9924A2F3B200A4D53C /* MMCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F9024A2F3B200A4D53C /* MMCardCollectionView.swift */; };
 		26CE8F9A24A2F3B200A4D53C /* CollectionViewCalculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CE8F9124A2F3B200A4D53C /* CollectionViewCalculate.swift */; };
 /* End PBXBuildFile section */
@@ -80,7 +79,6 @@
 		26CE8F8C24A2F3B200A4D53C /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		26CE8F8D24A2F3B200A4D53C /* CustomFlipTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlipTransition.swift; sourceTree = "<group>"; };
 		26CE8F8E24A2F3B200A4D53C /* CustomCardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCardLayout.swift; sourceTree = "<group>"; };
-		26CE8F8F24A2F3B200A4D53C /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		26CE8F9024A2F3B200A4D53C /* MMCardCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMCardCollectionView.swift; sourceTree = "<group>"; };
 		26CE8F9124A2F3B200A4D53C /* CollectionViewCalculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCalculate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,7 +191,6 @@
 				26CE8F8724A2F3B200A4D53C /* DelegateProxy.swift */,
 				26CE8F8824A2F3B200A4D53C /* Extension */,
 				26CE8F8B24A2F3B200A4D53C /* CardLayout */,
-				26CE8F8F24A2F3B200A4D53C /* .gitkeep */,
 				26CE8F9024A2F3B200A4D53C /* MMCardCollectionView.swift */,
 				26CE8F9124A2F3B200A4D53C /* CollectionViewCalculate.swift */,
 			);
@@ -329,7 +326,6 @@
 				26CE8F8224A2F30C00A4D53C /* CardACell.xib in Resources */,
 				26CE8F7E24A2F30C00A4D53C /* CardBCell.xib in Resources */,
 				26CE8F7D24A2F30C00A4D53C /* CardCCell.xib in Resources */,
-				26CE8F9824A2F3B200A4D53C /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

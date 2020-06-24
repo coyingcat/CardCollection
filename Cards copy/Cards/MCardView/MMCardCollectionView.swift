@@ -7,24 +7,13 @@
 //
 
 import UIKit
-public enum LayoutStyle {
-    case card
-}
 
 public class MMCollectionView: UICollectionView {
     fileprivate var transition = CustomFlipTransition(duration: 0.5)
     fileprivate lazy var _proxyDelegate: DelegateProxy = {
         return DelegateProxy(parentObject: self)
     }()
-    var layoutStyle: LayoutStyle = .card {
-        didSet {
-            switch layoutStyle {
-            case .card:
-                self.collectionViewLayout = CustomCardLayout()
-            
-            }
-        }
-    }
+
     
     override public var delegate: UICollectionViewDelegate? {
         get {
@@ -46,13 +35,8 @@ public class MMCollectionView: UICollectionView {
     }
     
     func setup() {
-
-        switch self.collectionViewLayout {
-        case _ as CustomCardLayout:
-            self.layoutStyle = .card
-        default:
-            self.layoutStyle = .card
-        }
+        self.collectionViewLayout = CustomCardLayout()
+   
     }
     
     override public var bounds: CGRect {

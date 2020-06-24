@@ -56,7 +56,8 @@ public class CustomFlipTransition: NSObject,UIViewControllerAnimatedTransitionin
                     containerView.addSubview(toView!)
                     transitionContext.completeTransition(true)
             })
-        } else {
+        }
+        else {
             self.cardView.isHidden = true
             let content = self.cardView.contentView
             let originalCrolor = content.backgroundColor

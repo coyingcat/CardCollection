@@ -23,15 +23,22 @@ class CardLayoutAttributes: UICollectionViewLayoutAttributes {
 }
 
 public class CustomCardLayout: UICollectionViewLayout {
+    
+    
     fileprivate var insertPath = [IndexPath]()
     fileprivate var deletePath = [IndexPath]()
     fileprivate var attributeList = [CardLayoutAttributes]()
+    
+    
 
     fileprivate var _selectPath: IndexPath? {
         didSet {
             self.collectionView!.isScrollEnabled = (_selectPath == nil)
         }
     }
+    
+    
+    
     public var selectPath: IndexPath? {
         set {
             _selectPath = (_selectPath == newValue) ? nil : newValue
@@ -42,6 +49,8 @@ public class CustomCardLayout: UICollectionViewLayout {
             return _selectPath
         }
     }
+    
+    
     
     public var bottomShowCount = 6 {
         didSet {
