@@ -52,34 +52,13 @@
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="ihi-qx-tfk" id="Esb-y1-5NF"/>
-                                    <outlet property="delegate" destination="ihi-qx-tfk" id="gBc-zl-mnR"/>
-                                </connections>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P63-ib-o8H">
-                                <rect key="frame" x="20" y="49" width="128" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="CMK-sp-m4m"/>
-                                    <constraint firstAttribute="height" constant="28" id="FkD-lc-JGl"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Cover"/>
-                                    <segment title="Normal"/>
-                                </segments>
-                                <color key="tintColor" red="0.1215686275" green="0.80784313730000001" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="segmentActionWithSeg:" destination="ihi-qx-tfk" eventType="valueChanged" id="fdU-uj-EWp"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstAttribute="leading" secondItem="umo-WW-Q45" secondAttribute="leading" id="2Bn-f9-9v5"/>
-                            <constraint firstItem="P63-ib-o8H" firstAttribute="top" secondItem="eKt-14-VZp" secondAttribute="bottom" constant="5" id="9gt-hW-0fF"/>
                             <constraint firstItem="umo-WW-Q45" firstAttribute="top" secondItem="eKt-14-VZp" secondAttribute="bottom" constant="44" id="FPb-DI-hJ8"/>
                             <constraint firstAttribute="trailing" secondItem="umo-WW-Q45" secondAttribute="trailing" id="M1f-6J-hPc"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="P63-ib-o8H" secondAttribute="leading" id="een-wc-5bH"/>
                             <constraint firstItem="UKT-aw-9wA" firstAttribute="top" secondItem="umo-WW-Q45" secondAttribute="bottom" id="mfx-Oy-RhS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="maI-3d-Zcu"/>
@@ -91,73 +70,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEO-Mv-hEe" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="111.99400299850076"/>
-        </scene>
-        <!--Second View Controller-->
-        <scene sceneID="RMZ-ru-qC9">
-            <objects>
-                <viewController storyboardIdentifier="Second" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dma-vq-1Cl" customClass="SecondViewController" customModule="Cards" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vJI-Xo-yhi"/>
-                        <viewControllerLayoutGuide type="bottom" id="tcb-KO-ZDg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="O8W-q7-opy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-DM-v73">
-                                <rect key="frame" x="20" y="58" width="374" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="nDu-Fp-o0q"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aq9-F3-pOI">
-                                <rect key="frame" x="20" y="812" width="374" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="KaD-7G-fL4"/>
-                                </constraints>
-                                <state key="normal" title="Dismiss">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="disMissAction" destination="Dma-vq-1Cl" eventType="touchUpInside" id="H7e-ya-zks"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoM-DA-WsW">
-                                <rect key="frame" x="20" y="767" width="374" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="V5a-7l-hwQ"/>
-                                </constraints>
-                                <state key="normal" title="Remove">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="removeAction" destination="Dma-vq-1Cl" eventType="touchUpInside" id="1FZ-Xq-4rb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96078431369999995" green="0.76862745099999996" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Aq9-F3-pOI" secondAttribute="trailing" id="AyN-Eb-yLh"/>
-                            <constraint firstItem="Aq9-F3-pOI" firstAttribute="top" secondItem="HoM-DA-WsW" secondAttribute="bottom" constant="15" id="BWw-hg-7oi"/>
-                            <constraint firstItem="JN3-DM-v73" firstAttribute="top" secondItem="vJI-Xo-yhi" secondAttribute="bottom" constant="14" id="Mrq-mz-7X9"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="JN3-DM-v73" secondAttribute="leading" id="UTk-Do-tmd"/>
-                            <constraint firstItem="tcb-KO-ZDg" firstAttribute="top" secondItem="Aq9-F3-pOI" secondAttribute="bottom" constant="20" id="nlF-AI-k3R"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HoM-DA-WsW" secondAttribute="trailing" id="om0-1f-T2w"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Aq9-F3-pOI" secondAttribute="leading" id="pOp-aw-enG"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="HoM-DA-WsW" secondAttribute="leading" id="qu4-S1-coe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JN3-DM-v73" secondAttribute="trailing" id="sO2-qA-pST"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QII-FT-swA"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v88-LH-z5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="111.99400299850076"/>
         </scene>
     </scenes>
 </document>

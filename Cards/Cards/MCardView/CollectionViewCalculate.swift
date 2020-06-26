@@ -9,7 +9,7 @@
 import UIKit
 
 class CollectionViewCalculate: NSObject {
-    fileprivate var sections:Int = 0
+    fileprivate var sections = 0
     fileprivate var sectionItemsCount = [Int:Int]()
     var totalCount = 0
     

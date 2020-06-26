@@ -9,19 +9,29 @@
 import UIKit
 
 open class CardCell:UICollectionViewCell{
+    
+    
+    
     var collectionV:UICollectionView!
     var reloadBlock:(()->Void)?
     var customCardLayout:CardLayoutAttributes?
+    
+    
+    
     var originTouchY:CGFloat = 0.0
     var pangesture:UIPanGestureRecognizer?
+    
+    
+    
+    
     @objc func pan(rec:UIPanGestureRecognizer){
         let point = rec.location(in: collectionV)
-        let shiftY:CGFloat = (point.y - originTouchY  > 0) ? point.y - originTouchY : 0
+        let shiftY:CGFloat = max(point.y - originTouchY, 0)
         switch rec.state {
             case .began:
                 originTouchY = point.y
             case .changed:
-                self.transform = CGAffineTransform.init(translationX: 0, y: shiftY)
+                self.transform = CGAffineTransform(translationX: 0, y: shiftY)
             default:
                 let isNeedReload = (shiftY > self.contentView.frame.height/3) ? true : false
                 let resetY = (isNeedReload) ? self.contentView.bounds.height * 1.2 : 0

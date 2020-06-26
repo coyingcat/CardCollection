@@ -9,18 +9,14 @@
 import UIKit
 
 class CardCCell: CardCell {
-    @IBOutlet weak var btnClick:UIButton!
+   
     private var callBack:(()->Void)?
 
     func clickCallBack(c:@escaping ()->Void) {
         self.callBack = c
     }
     
-    @IBAction func clickAction() {
-        if let c = self.callBack {
-            c()
-        }
-    }
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
