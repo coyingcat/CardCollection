@@ -8,6 +8,16 @@ Latest Simple Card
 
 
 
+<video width="320" height="240" autoplay>
+  <source src="https://github.com/coyingcat/CardCollection/blob/master/Src/aa.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+
+
+![tip](https://github.com/coyingcat/CardCollection/blob/master/Src/_wwwweee.png)
+
+
 Origin Card
 
 ![demo](https://github.com/MillmanY/MMCardView/blob/master/demo.gif)
