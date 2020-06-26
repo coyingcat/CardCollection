@@ -205,8 +205,8 @@ public class CustomCardLayout: UICollectionViewFlowLayout {
         guard let collection = collectionView else {
             return []
         }
-        let shitIdx = Int(collection.contentOffset.y / titleHeight)
-        if shitIdx < 0 {
+        let noneIdx = Int(collection.contentOffset.y / titleHeight)
+        if noneIdx < 0 {
             return []
         }
         let x = collection.frame.origin.x
