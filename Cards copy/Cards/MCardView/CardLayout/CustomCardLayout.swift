@@ -22,7 +22,7 @@ class CardLayoutAttributes: UICollectionViewLayoutAttributes {
     }
 }
 
-public class CustomCardLayout: UICollectionViewLayout {
+public class CustomCardLayout: UICollectionViewFlowLayout {
     
     
     fileprivate var insertPath = [IndexPath]()
@@ -180,19 +180,17 @@ public class CustomCardLayout: UICollectionViewLayout {
         guard let collection = collectionView else {
             return
         }
-        let shitIdx = Int(collection.contentOffset.y/titleHeight)
-        if shitIdx < 0 {
+        let noneIdx = Int(collection.contentOffset.y/titleHeight)
+        if noneIdx < 0 {
             return
         }
         attribute.isExpand = false
         let index = attribute.zIndex
         var currentFrame = CGRect(x: collection.frame.origin.x, y: titleHeight * CGFloat(index), width: cellSize.width, height: cellSize.height)
- 
-                
-        if index <= shitIdx, index >= shitIdx{
+        if index == noneIdx{
             attribute.frame = CGRect(x: currentFrame.origin.x, y: collection.contentOffset.y, width: cellSize.width, height: cellSize.height)
         }
-        else if index <= shitIdx, currentFrame.maxY > collection.contentOffset.y{
+        else if index <= noneIdx, currentFrame.maxY > collection.contentOffset.y{
             currentFrame.origin.y -= (currentFrame.maxY - collection.contentOffset.y )
             attribute.frame = currentFrame
         }
