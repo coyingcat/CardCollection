@@ -216,22 +216,30 @@ public class CustomCardLayout: UICollectionViewLayout {
         var selectedIdx = 0
         for attr in attributes{
             if attr.indexPath == selectedIP{
-                attr.isExpand = true
                 break
             }
             selectedIdx += 1
         }
         
         var frames = [CGRect](repeating: .zero, count: attributes.count)
-        frames[selectedIdx] = CGRect(x: x, y: collection.contentOffset.y - cellSize.height * 0.7, width: cellSize.width, height: cellSize.height)
-        
-        for i in 0..<selectedIdx{
-            frames[selectedIdx - i] = CGRect(x: x, y: frames[selectedIdx].origin.y - titleHeight * CGFloat(selectedIdx - i), width: cellSize.width, height: cellSize.height)
+        print(collection.contentOffset)
+        print(cellSize.height)
+        print(titleHeight)
+        frames[selectedIdx] = CGRect(x: x, y: collection.contentOffset.y + cellSize.height, width: cellSize.width, height: cellSize.height)
+        if selectedIdx > 0{
+            for i in 0...(selectedIdx-1){
+                print(selectedIdx - i - 1)
+                print(CGRect(x: x, y: frames[selectedIdx].origin.y - titleHeight * CGFloat(selectedIdx - i), width: cellSize.width, height: cellSize.height))
+                print("___ ")
+                frames[selectedIdx - i - 1] = CGRect(x: x, y: frames[selectedIdx].origin.y - titleHeight * CGFloat(selectedIdx - i), width: cellSize.width, height: cellSize.height)
+            }
+        }
+        if selectedIdx < (attributes.count - 1){
+            for i in (selectedIdx + 1)...(attributes.count - 1){
+                frames[i] = CGRect(x: x, y: frames[selectedIdx].origin.y + titleHeight * CGFloat(i - selectedIdx - 1) + cellSize.height, width: cellSize.width, height: cellSize.height)
+            }
         }
         
-        for i in selectedIdx..<(attributes.count){
-            frames[i] = CGRect(x: x, y: frames[selectedIdx].origin.y + titleHeight * CGFloat(i - selectedIdx - 1) + cellSize.height, width: cellSize.width, height: cellSize.height)
-        }
         
         return frames
         
