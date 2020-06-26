@@ -222,21 +222,19 @@ public class CustomCardLayout: UICollectionViewLayout {
         }
         
         var frames = [CGRect](repeating: .zero, count: attributes.count)
-        print(collection.contentOffset)
-        print(cellSize.height)
-        print(titleHeight)
-        frames[selectedIdx] = CGRect(x: x, y: collection.contentOffset.y + cellSize.height, width: cellSize.width, height: cellSize.height)
+        
+        // Edit here
+        let offsetSelected: CGFloat = 100
+        let marginBottomSelected: CGFloat = 10
+        frames[selectedIdx] = CGRect(x: x, y: collection.contentOffset.y + offsetSelected, width: cellSize.width, height: cellSize.height)
         if selectedIdx > 0{
             for i in 0...(selectedIdx-1){
-                print(selectedIdx - i - 1)
-                print(CGRect(x: x, y: frames[selectedIdx].origin.y - titleHeight * CGFloat(selectedIdx - i), width: cellSize.width, height: cellSize.height))
-                print("___ ")
-                frames[selectedIdx - i - 1] = CGRect(x: x, y: frames[selectedIdx].origin.y - titleHeight * CGFloat(selectedIdx - i), width: cellSize.width, height: cellSize.height)
+                frames[selectedIdx - i - 1] = CGRect(x: x, y: frames[selectedIdx].origin.y - titleHeight * CGFloat(i + 1), width: cellSize.width, height: cellSize.height)
             }
         }
         if selectedIdx < (attributes.count - 1){
             for i in (selectedIdx + 1)...(attributes.count - 1){
-                frames[i] = CGRect(x: x, y: frames[selectedIdx].origin.y + titleHeight * CGFloat(i - selectedIdx - 1) + cellSize.height, width: cellSize.width, height: cellSize.height)
+                frames[i] = CGRect(x: x, y: frames[selectedIdx].origin.y + marginBottomSelected + titleHeight * CGFloat(i - selectedIdx - 1) + cellSize.height, width: cellSize.width, height: cellSize.height)
             }
         }
         
