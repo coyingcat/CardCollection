@@ -8,11 +8,8 @@ Latest Simple Card
 
 
 
-<video width="320" height="240" autoplay>
-  <source src="https://github.com/coyingcat/CardCollection/blob/master/Src/aa.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
 
+![new](https://github.com/coyingcat/CardCollection/blob/master/Src/1111.gif)
 
 
 ![tip](https://github.com/coyingcat/CardCollection/blob/master/Src/_wwwweee.png)
