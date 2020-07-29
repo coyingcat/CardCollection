@@ -67,7 +67,7 @@ final class CustomLayout: UICollectionViewLayout {
   }
   
   private var contentOffset: CGPoint {
-    return collectionView!.contentOffset
+    collectionView!.contentOffset
   }
 }
 
@@ -191,9 +191,10 @@ extension CustomLayout {
       
     case Element.header.kind:
       return cache[.header]?[indexPath]
-      
-    default:
+    case CustomLayout.Element.menu.kind:
       return cache[.menu]?[indexPath]
+    default:
+      return nil
     }
   }
   
