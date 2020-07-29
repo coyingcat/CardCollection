@@ -49,15 +49,7 @@ private extension JungleCupCollectionViewController {
     customLayout.settings.menuSize = CGSize(width: collectionView.frame.width, height: 70)
     customLayout.settings.sectionsHeaderSize = CGSize(width: collectionView.frame.width, height: 50)
     customLayout.settings.sectionsFooterSize = CGSize(width: collectionView.frame.width, height: 50)
-    customLayout.settings.isHeaderStretchy = true
-    customLayout.settings.isAlphaOnHeaderActive = true
-    customLayout.settings.headerOverlayMaxAlphaValue = CGFloat(0.6)
-    customLayout.settings.isMenuSticky = true
-    customLayout.settings.isSectionHeadersSticky = true
-    customLayout.settings.isParallaxOnCellsEnabled = true
-    customLayout.settings.maxParallaxOffset = 60
-    customLayout.settings.minimumInteritemSpacing = 0
-    customLayout.settings.minimumLineSpacing = 3
+   
   }
 }
 

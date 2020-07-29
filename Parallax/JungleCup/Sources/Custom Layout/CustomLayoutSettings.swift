@@ -14,17 +14,17 @@ struct CustomLayoutSettings {
   var sectionsFooterSize: CGSize?
 
   // Behaviours
-  var isHeaderStretchy: Bool
-  var isAlphaOnHeaderActive: Bool
-  var headerOverlayMaxAlphaValue: CGFloat
-  var isMenuSticky: Bool
-  var isSectionHeadersSticky: Bool
-  var isParallaxOnCellsEnabled: Bool
+  private (set) var isHeaderStretchy: Bool
+  private (set) var isAlphaOnHeaderActive: Bool
+  private (set) var headerOverlayMaxAlphaValue: CGFloat
+  private (set) var isMenuSticky: Bool
+  private (set) var isSectionHeadersSticky: Bool
+  private (set) var isParallaxOnCellsEnabled: Bool
 
   // Spacing
-  var minimumInteritemSpacing: CGFloat
-  var minimumLineSpacing: CGFloat
-  var maxParallaxOffset: CGFloat
+  private (set) var minimumInteritemSpacing: CGFloat
+  private (set) var minimumLineSpacing: CGFloat
+  private (set) var maxParallaxOffset: CGFloat
 }
 
 extension CustomLayoutSettings {
@@ -35,14 +35,20 @@ extension CustomLayoutSettings {
     self.menuSize = nil
     self.sectionsHeaderSize = nil
     self.sectionsFooterSize = nil
-    self.isHeaderStretchy = false
+    
+    
+    
+    self.isHeaderStretchy = true
     self.isAlphaOnHeaderActive = true
-    self.headerOverlayMaxAlphaValue = 0
-    self.isMenuSticky = false
-    self.isSectionHeadersSticky = false
-    self.isParallaxOnCellsEnabled = false
-    self.maxParallaxOffset = 0
+    self.headerOverlayMaxAlphaValue = CGFloat(0.6)
+    self.isMenuSticky = true
+    self.isSectionHeadersSticky = true
+    self.isParallaxOnCellsEnabled = true
+    
+    
+    
+    self.maxParallaxOffset = 60
     self.minimumInteritemSpacing = 0
-    self.minimumLineSpacing = 0
+    self.minimumLineSpacing = 3
   }
 }
