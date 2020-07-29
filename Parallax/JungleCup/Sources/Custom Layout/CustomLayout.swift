@@ -31,9 +31,9 @@ final class CustomLayout: UICollectionViewLayout {
   }
   
   // MARK: - Properties
-  var settings = CustomLayoutSettings()
+  let settings = CustomLayoutSettings()
   private var oldBounds = CGRect.zero
-  private var contentHeight = CGFloat()
+  private var contentHeight = CGFloat.zero
   private var cache = [Element: [IndexPath: CustomLayoutAttributes]]()
   private var visibleLayoutAttributes = [CustomLayoutAttributes]()
   private var zIndex = 0

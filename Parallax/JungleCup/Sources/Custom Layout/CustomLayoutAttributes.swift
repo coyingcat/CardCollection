@@ -9,7 +9,7 @@ final class CustomLayoutAttributes: UICollectionViewLayoutAttributes {
   // MARK: - Properties
   var parallax = CGAffineTransform.identity
   var initialOrigin = CGPoint.zero
-  var headerOverlayAlpha = CGFloat(0)
+  var headerOverlayAlpha = CGFloat.zero
 
   // MARK: - Life Cycle
   override func copy(with zone: NSZone?) -> Any {
