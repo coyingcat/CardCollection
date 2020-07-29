@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="frB-9P-hsQ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Jungle Cup Collection View Controller-->
+        <scene sceneID="Ihh-NM-P6n">
+            <objects>
+                <collectionViewController id="frB-9P-hsQ" customClass="JungleCupCollectionViewController" customModule="JungleCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="i70-hy-zM0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sco-eg-fpY" customClass="CustomLayout" customModule="JungleCup" customModuleProvider="target">
+                            <size key="itemSize" width="300" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Dpo-SR-S5R" customClass="PlayerCell" customModule="JungleCup" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="0.0" width="300" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wdg-p1-MbT">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Wdg-p1-MbT" firstAttribute="top" secondItem="Dpo-SR-S5R" secondAttribute="top" id="1U0-pu-TLY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wdg-p1-MbT" secondAttribute="trailing" id="JFJ-hE-tgD"/>
+                                    <constraint firstItem="Wdg-p1-MbT" firstAttribute="leading" secondItem="Dpo-SR-S5R" secondAttribute="leading" id="Zoe-71-yAb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wdg-p1-MbT" secondAttribute="bottom" id="sym-Fk-noN"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="picture" destination="Wdg-p1-MbT" id="dqe-el-Nd9"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="frB-9P-hsQ" id="ybm-fV-0C7"/>
+                            <outlet property="delegate" destination="frB-9P-hsQ" id="JQj-y2-d7x"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8J-KH-CpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="159.67016491754123"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="U6b-Vx-4bR" customClass="HeaderView" customModule="JungleCup" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="640" height="381"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="64C-eU-t3C">
+                    <rect key="frame" x="0.0" y="0.0" width="640" height="381"/>
+                </imageView>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaI-Of-QuR">
+                    <rect key="frame" x="0.0" y="0.0" width="640" height="381"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.32941176470588235" green="0.25882352941176467" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="64C-eU-t3C" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="5WN-1e-zPz"/>
+                <constraint firstAttribute="trailing" secondItem="BaI-Of-QuR" secondAttribute="trailing" id="8wE-AI-nRW"/>
+                <constraint firstAttribute="trailing" secondItem="64C-eU-t3C" secondAttribute="trailing" id="IE1-0U-wTS"/>
+                <constraint firstAttribute="bottom" secondItem="64C-eU-t3C" secondAttribute="bottom" id="RIT-Fk-yga"/>
+                <constraint firstItem="64C-eU-t3C" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="aO4-uo-dXQ"/>
+                <constraint firstItem="BaI-Of-QuR" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="cfq-sn-MAM"/>
+                <constraint firstAttribute="bottom" secondItem="BaI-Of-QuR" secondAttribute="bottom" id="pTg-Xe-72h"/>
+                <constraint firstItem="BaI-Of-QuR" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="xK8-IW-xnD"/>
+            </constraints>
+            <connections>
+                <outlet property="img" destination="64C-eU-t3C" id="C8j-0U-RsY"/>
+                <outlet property="overlayView" destination="BaI-Of-QuR" id="oIn-Xy-rTd"/>
+            </connections>
+            <point key="canvasLocation" x="-84" y="-64.5"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="header" width="498" height="400"/>
+    </resources>
+</document>
