@@ -273,6 +273,9 @@ extension CustomLayout {
     let parallaxOffset = -(settings.maxParallaxOffset * cellDistanceFromCenter) / (halfHeight + halfCellHeight)
     let boundedParallaxOffset = min(max(-settings.maxParallaxOffset, parallaxOffset), settings.maxParallaxOffset)
     attributes.parallax = CGAffineTransform(translationX: 0, y: boundedParallaxOffset)
+    
+    
+    //  boundedParallaxOffset * 5
   }
 }
 

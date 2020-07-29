@@ -25,4 +25,9 @@ final class PlayerCell: UICollectionViewCell {
 
     picture.transform = .identity
   }
+  
+  
+  override func awakeFromNib() {
+   // clipsToBounds = false
+  }
 }

@@ -13,7 +13,14 @@
 
 
 
-感觉 [Custom UICollectionViewLayout Tutorial With Parallax](https://www.raywenderlich.com/527-custom-uicollectionviewlayout-tutorial-with-parallax#toc-anchor-011) 有 bug
+基于 [Custom UICollectionViewLayout Tutorial With Parallax](https://www.raywenderlich.com/527-custom-uicollectionviewlayout-tutorial-with-parallax#toc-anchor-011) 
+
+
+Parallax， 视差效果，
+
+就是滚动的时候，cell 上面的图片 picture , 有一个纵向 ( y 轴 ) 的位移
+
+上上下下的晃动
 
 
 ## * 第一个例子，Demo
