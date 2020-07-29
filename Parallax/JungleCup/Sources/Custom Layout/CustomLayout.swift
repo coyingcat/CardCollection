@@ -51,31 +51,19 @@ final class CustomLayout: UICollectionViewLayout {
   }
   
   private var headerSize: CGSize {
-    CGSize(width: collectionViewWidth, height: settings.headerSizeH)
+     CGSize(width: collectionViewWidth, height: settings.headerSizeH)
   }
   
   private var menuSize: CGSize {
-    guard let menuSize = settings.menuSize else {
-      return .zero
-    }
-    
-    return menuSize
+    CGSize(width: collectionViewWidth, height: settings.menuSizeH)
   }
   
   private var sectionsHeaderSize: CGSize {
-    guard let sectionsHeaderSize = settings.sectionsHeaderSize else {
-      return .zero
-    }
-    
-    return sectionsHeaderSize
+    CGSize(width: collectionViewWidth, height: settings.sectionsHeaderSizeH)
   }
   
   private var sectionsFooterSize: CGSize {
-    guard let sectionsFooterSize = settings.sectionsFooterSize else {
-      return .zero
-    }
-    
-    return sectionsFooterSize
+    CGSize(width: collectionViewWidth, height: settings.sectionsFooterSizeH)
   }
   
   private var contentOffset: CGPoint {

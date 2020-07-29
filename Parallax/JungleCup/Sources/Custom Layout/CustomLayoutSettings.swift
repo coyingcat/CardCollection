@@ -10,9 +10,9 @@ struct CustomLayoutSettings {
   private (set) var itemSizeH: CGFloat
   private (set) var headerSizeH: CGFloat
   
-  var menuSize: CGSize?
-  var sectionsHeaderSize: CGSize?
-  var sectionsFooterSize: CGSize?
+  private (set) var menuSizeH: CGFloat
+  private (set) var sectionsHeaderSizeH: CGFloat
+  private (set) var sectionsFooterSizeH: CGFloat
 
   // Behaviours
   private (set) var isHeaderStretchy: Bool
@@ -33,9 +33,10 @@ extension CustomLayoutSettings {
   init() {
     self.itemSizeH = 200
     self.headerSizeH = 300
-    self.menuSize = nil
-    self.sectionsHeaderSize = nil
-    self.sectionsFooterSize = nil
+    
+    self.menuSizeH = 70
+    self.sectionsHeaderSizeH = 50
+    self.sectionsFooterSizeH = 50
     
     
     

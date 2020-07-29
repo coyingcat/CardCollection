@@ -30,7 +30,8 @@ final class JungleCupCollectionViewController: UICollectionViewController {
 private extension JungleCupCollectionViewController {
 
   func setupCollectionViewLayout() {
-    guard let collectionView = collectionView, let customLayout = customLayout else { return }
+    
+    guard let collectionView = collectionView else { return }
 
     collectionView.register(
       UINib(nibName: "HeaderView", bundle: nil),
@@ -44,10 +45,6 @@ private extension JungleCupCollectionViewController {
       withReuseIdentifier: CustomLayout.Element.menu.id
     )
 
-
-    customLayout.settings.menuSize = CGSize(width: collectionView.frame.width, height: 70)
-    customLayout.settings.sectionsHeaderSize = CGSize(width: collectionView.frame.width, height: 50)
-    customLayout.settings.sectionsFooterSize = CGSize(width: collectionView.frame.width, height: 50)
    
   }
 }
