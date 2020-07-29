@@ -4,7 +4,19 @@
 ## 博客地址： [UICollectionView 自定制布局，例子是钱包界面](https://juejin.im/post/5ef5b7206fb9a07eae53ea3e)
 
 
-## Demo
+
+
+
+## * 第 2 个例子，是 Parallax
+
+
+
+
+
+感觉 [Custom UICollectionViewLayout Tutorial With Parallax](https://www.raywenderlich.com/527-custom-uicollectionviewlayout-tutorial-with-parallax#toc-anchor-011) 有 bug
+
+
+## * 第一个例子，Demo
 
 
 Latest Simple Card
