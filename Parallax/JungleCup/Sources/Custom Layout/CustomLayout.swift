@@ -47,27 +47,11 @@ final class CustomLayout: UICollectionViewLayout {
   }
   
   private var cellHeight: CGFloat {
-    guard let itemSize = settings.itemSize else {
-      return collectionViewHeight
-    }
-    
-    return itemSize.height
-  }
-  
-  private var cellWidth: CGFloat {
-    guard let itemSize = settings.itemSize else {
-      return collectionViewWidth
-    }
-    
-    return itemSize.width
+     settings.itemSizeH
   }
   
   private var headerSize: CGSize {
-    guard let headerSize = settings.headerSize else {
-      return .zero
-    }
-    
-    return headerSize
+    CGSize(width: collectionViewWidth, height: settings.headerSizeH)
   }
   
   private var menuSize: CGSize {
@@ -112,7 +96,7 @@ extension CustomLayout {
     contentHeight = 0
     zIndex = 0
     oldBounds = collectionView.bounds
-    let itemSize = CGSize(width: cellWidth, height: cellHeight)
+    let itemSize = CGSize(width: collectionViewWidth, height: cellHeight)
     
     let headerAttributes = CustomLayoutAttributes(
       forSupplementaryViewOfKind: Element.header.kind,

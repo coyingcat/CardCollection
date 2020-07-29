@@ -44,8 +44,7 @@ private extension JungleCupCollectionViewController {
       withReuseIdentifier: CustomLayout.Element.menu.id
     )
 
-    customLayout.settings.itemSize = CGSize(width: collectionView.frame.width, height: 200)
-    customLayout.settings.headerSize = CGSize(width: collectionView.frame.width, height: 300)
+
     customLayout.settings.menuSize = CGSize(width: collectionView.frame.width, height: 70)
     customLayout.settings.sectionsHeaderSize = CGSize(width: collectionView.frame.width, height: 50)
     customLayout.settings.sectionsFooterSize = CGSize(width: collectionView.frame.width, height: 50)

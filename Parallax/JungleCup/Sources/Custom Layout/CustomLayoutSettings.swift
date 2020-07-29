@@ -7,8 +7,9 @@ import UIKit
 struct CustomLayoutSettings {
 
   // Elements sizes
-  var itemSize: CGSize?
-  var headerSize: CGSize?
+  private (set) var itemSizeH: CGFloat
+  private (set) var headerSizeH: CGFloat
+  
   var menuSize: CGSize?
   var sectionsHeaderSize: CGSize?
   var sectionsFooterSize: CGSize?
@@ -30,8 +31,8 @@ struct CustomLayoutSettings {
 extension CustomLayoutSettings {
 
   init() {
-    self.itemSize = nil
-    self.headerSize = nil
+    self.itemSizeH = 200
+    self.headerSizeH = 300
     self.menuSize = nil
     self.sectionsHeaderSize = nil
     self.sectionsFooterSize = nil
