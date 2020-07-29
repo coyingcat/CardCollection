@@ -112,7 +112,7 @@ extension CustomLayout {
         let attributes = CustomLayoutAttributes(forCellWith: cellIndexPath)
         let lineInterSpace = settings.minimumLineSpacing
         attributes.frame = CGRect(
-          x: 0 + settings.minimumInteritemSpacing,
+          x: settings.minimumInteritemSpacing,
           y: contentHeight + lineInterSpace,
           width: itemSize.width,
           height: itemSize.height
