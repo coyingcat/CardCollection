@@ -65,8 +65,7 @@ final class CustomLayout: UICollectionViewLayout {
 extension CustomLayout {
   
   override public func prepare() {
-    guard let collectionView = collectionView, collectionView.numberOfItems(inSection: 0) > 0,
-        cache.isEmpty else {
+    guard let collectionView = collectionView, collectionView.numberOfItems(inSection: 0) > 0 else {
         return
     }
     

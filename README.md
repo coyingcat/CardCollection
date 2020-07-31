@@ -11,6 +11,17 @@
 
 
 
+### 2.1 简化，黏住效果
+
+
+
+
+
+
+
+### 2.2 原版，小小改动
+
+
 
 
 基于 [Custom UICollectionViewLayout Tutorial With Parallax](https://www.raywenderlich.com/527-custom-uicollectionviewlayout-tutorial-with-parallax#toc-anchor-011) 
@@ -21,6 +32,8 @@ Parallax， 视差效果，
 就是滚动的时候，cell 上面的图片 picture , 有一个纵向 ( y 轴 ) 的位移
 
 上上下下的晃动
+
+<hr>
 
 
 ## * 第一个例子，Demo

@@ -271,6 +271,7 @@
 				TargetAttributes = {
 					77185E6A1E747F7D00081FA8 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = D878P8TW6L;
 						ProvisioningStyle = Automatic;
 					};
 					77185E7E1E747F7E00081FA8 = {
@@ -512,7 +513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D878P8TW6L;
 				INFOPLIST_FILE = JungleCup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.JungleCup;
@@ -525,7 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D878P8TW6L;
 				INFOPLIST_FILE = JungleCup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.JungleCup;
