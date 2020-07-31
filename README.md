@@ -14,7 +14,7 @@
 ### 2.1 简化，黏住效果
 
 
-
+![easy](https://github.com/coyingcat/CardCollection/blob/master/Src/aaa.gif)
 
 
 
