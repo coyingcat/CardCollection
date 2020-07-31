@@ -23,6 +23,8 @@
 
 
 
+!(原版)[https://github.com/coyingcat/CardCollection/blob/master/Src/custom-layout-parallax-gif-final.gif]
+
 
 基于 [Custom UICollectionViewLayout Tutorial With Parallax](https://www.raywenderlich.com/527-custom-uicollectionviewlayout-tutorial-with-parallax#toc-anchor-011) 
 
