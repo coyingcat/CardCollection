@@ -1,7 +1,13 @@
 # CardView, Swift 5
 
 
-## 博客地址： [UICollectionView 自定制布局，例子是钱包界面](https://juejin.im/post/5ef5b7206fb9a07eae53ea3e)
+
+
+
+## 2 博客地址：[UICollectionView 自定制布局： 顶部黏住效果](https://juejin.im/post/6855937244667215885)
+
+
+## 1 博客地址： [UICollectionView 自定制布局，例子是钱包界面](https://juejin.im/post/5ef5b7206fb9a07eae53ea3e)
 
 
 
