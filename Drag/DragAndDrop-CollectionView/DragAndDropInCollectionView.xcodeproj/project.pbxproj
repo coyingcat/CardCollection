@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2671C9C125108DFD00024839 /* EntryCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C9C025108DFD00024839 /* EntryCtrl.swift */; };
+		2671C9C325108E5200024839 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C9C225108E5200024839 /* SecondController.swift */; };
+		2671C9C625108EE900024839 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C9C525108EE900024839 /* CollectionViewCell.swift */; };
+		2671C9C825108F1F00024839 /* SupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671C9C725108F1F00024839 /* SupplementaryView.swift */; };
 		BD8FA17F1FB0912200B6C3C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8FA17E1FB0912200B6C3C8 /* AppDelegate.swift */; };
 		BD8FA1811FB0912200B6C3C8 /* DragDropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8FA1801FB0912200B6C3C8 /* DragDropViewController.swift */; };
 		BD8FA1841FB0912200B6C3C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8FA1821FB0912200B6C3C8 /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2671C9C025108DFD00024839 /* EntryCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCtrl.swift; sourceTree = "<group>"; };
+		2671C9C225108E5200024839 /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
+		2671C9C525108EE900024839 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		2671C9C725108F1F00024839 /* SupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementaryView.swift; sourceTree = "<group>"; };
 		BD8FA17B1FB0912200B6C3C8 /* DragAndDropInCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragAndDropInCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8FA17E1FB0912200B6C3C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD8FA1801FB0912200B6C3C8 /* DragDropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDropViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2671C9BF25108DE400024839 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				2671C9C425108ED800024839 /* Cells */,
+				2671C9C225108E5200024839 /* SecondController.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
+		2671C9C425108ED800024839 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2671C9C525108EE900024839 /* CollectionViewCell.swift */,
+				2671C9C725108F1F00024839 /* SupplementaryView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BD8FA1721FB0912200B6C3C8 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +82,7 @@
 		BD8FA17D1FB0912200B6C3C8 /* DragAndDropInCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				2671C9BF25108DE400024839 /* Second */,
 				BD8FA17E1FB0912200B6C3C8 /* AppDelegate.swift */,
 				BD8FA1801FB0912200B6C3C8 /* DragDropViewController.swift */,
 				BDA631AB1FB31A3700A9DCF6 /* DragDropCollectionViewCell.swift */,
@@ -63,6 +90,7 @@
 				BD8FA1851FB0912200B6C3C8 /* Assets.xcassets */,
 				BD8FA1871FB0912200B6C3C8 /* LaunchScreen.storyboard */,
 				BD8FA18A1FB0912200B6C3C8 /* Info.plist */,
+				2671C9C025108DFD00024839 /* EntryCtrl.swift */,
 			);
 			path = DragAndDropInCollectionView;
 			sourceTree = "<group>";
@@ -140,8 +168,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8FA1811FB0912200B6C3C8 /* DragDropViewController.swift in Sources */,
+				2671C9C125108DFD00024839 /* EntryCtrl.swift in Sources */,
+				2671C9C825108F1F00024839 /* SupplementaryView.swift in Sources */,
+				2671C9C625108EE900024839 /* CollectionViewCell.swift in Sources */,
 				BDA631AC1FB31A3700A9DCF6 /* DragDropCollectionViewCell.swift in Sources */,
 				BD8FA17F1FB0912200B6C3C8 /* AppDelegate.swift in Sources */,
+				2671C9C325108E5200024839 /* SecondController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
