@@ -9,7 +9,6 @@
 import UIKit
 
 class SupplementaryView: UICollectionReusableView {
-      weak var label: UILabel?
     
       override init(frame: CGRect) {
           super.init(frame: frame)

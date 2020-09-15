@@ -66,7 +66,10 @@ extension SecondController: UICollectionViewDelegate { }
 
 extension SecondController: UICollectionViewDataSource {
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int { return data.count }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return data.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data[section].count
     }
@@ -186,7 +189,7 @@ extension SecondController: UICollectionViewDropDelegate {
     
     private func reorderItems(coordinator: UICollectionViewDropCoordinator, destinationIndexPath: IndexPath, collectionView: UICollectionView) {
         let items = coordinator.items
-        if  items.count == 1, let item = items.first,
+        if items.count == 1, let item = items.first,
             let sourceIndexPath = item.sourceIndexPath,
             let localObject = item.dragItem.localObject as? CellModel {
 

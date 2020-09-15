@@ -13,6 +13,9 @@
 ## * 第 3 个例子，是 Drag, 拖动
 
 
+![Drag](https://github.com/coyingcat/CardCollection/blob/master/Drag/DragAndDrop-CollectionView/DragDrop.gif)
+
+
 * ref 1: [Drag and reorder - UICollectionview with sections](https://stackoverflow.com/questions/39080807/drag-and-reorder-uicollectionview-with-sections)
 
 
