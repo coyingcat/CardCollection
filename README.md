@@ -10,7 +10,13 @@
 ## 1 博客地址： [UICollectionView 自定制布局，例子是钱包界面](https://juejin.im/post/5ef5b7206fb9a07eae53ea3e)
 
 
+## * 第 3 个例子，是 Drag, 拖动
 
+
+* ref 1: [Drag and reorder - UICollectionview with sections](https://stackoverflow.com/questions/39080807/drag-and-reorder-uicollectionview-with-sections)
+
+
+* ref 2: [Coding for iOS 11: How to drag & drop into collections & tables](https://hackernoon.com/drag-it-drop-it-in-collection-table-ios-11-6bd28795b313)
 
 
 ## * 第 2 个例子，是 Parallax
